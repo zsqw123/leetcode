@@ -2,8 +2,33 @@ fun main() {
     val array = intArrayOf(1, 2, 3, 4, 5, 6, 7)
     array.forEach { print(it) }
     println()
-    rotate3(array, 10)
+    rotate1(array, 10)
+    // 突然意识到不对劲 好像要求空间复杂度O(1)? 我现在还是不是很懂空间复杂度....
     array.forEach { print(it) }
+}
+
+/**
+ * 这应该才算O(1)吧,,,,
+ * @param nums IntArray
+ * @param k Int
+ * @return Unit
+ */
+fun rotate1(nums: IntArray, k: Int): Unit {
+    val kk = k % nums.size
+    if (kk == 0) return
+    fun IntArray.reverse(startIndex: Int, endIndex: Int) {
+        val midPoint = ((endIndex + startIndex) / 2)
+        var reverseIndex = endIndex
+        for (index in startIndex..midPoint) {
+            val tmp = this[index]
+            this[index] = this[reverseIndex]
+            this[reverseIndex] = tmp
+            reverseIndex--
+        }
+    }
+    nums.reverse()
+    nums.reverse(0, kk - 1)
+    nums.reverse(kk, nums.size - 1)
 }
 
 fun rotate(nums: IntArray, k: Int): Unit {
