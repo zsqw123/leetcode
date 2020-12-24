@@ -1,22 +1,22 @@
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
-}
-
-val list = mutableListOf<Int?>()
-fun TreeNode.printTree() {
-    list += `val`
-    if (left != null) {
-        left!!.printTree()
-    }
-    if (right != null) {
-        right!!.printTree()
-    }
-}
-
 fun main() {
+    class TreeNode(var `val`: Int) {
+        var left: TreeNode? = null
+        var right: TreeNode? = null
+    }
+
+    val list = mutableListOf<Int?>()
+    fun TreeNode.printTree() {
+        list += `val`
+        if (left != null) {
+            left!!.printTree()
+        }
+        if (right != null) {
+            right!!.printTree()
+        }
+    }
+
     fun helper(
-        preorder: IntArray, inorder: IntArray, preIndex: Int = 0, inS: Int = 0, inE: Int = preorder.size - 1
+            preorder: IntArray, inorder: IntArray, preIndex: Int = 0, inS: Int = 0, inE: Int = preorder.size - 1
     ): TreeNode? {
         if (inS > inE) return null
         val rootNum = preorder[preIndex]
@@ -26,6 +26,7 @@ fun main() {
         tree.right = helper(preorder, inorder, preIndex + 1 + inIndex - inS, inIndex + 1, inE)
         return tree
     }
+
     fun buildTree(preorder: IntArray, inorder: IntArray): TreeNode? {
         return helper(preorder, inorder)
     }
