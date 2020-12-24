@@ -1,12 +1,12 @@
 fun main() {
     fun plusOne(digits: IntArray): IntArray {
         var bool = false // 进位则true
-        digits.reverse()
-        if (digits[0] < 9) {
-            digits[0] = digits[0] + 1
+        val lastIndex = digits.lastIndex
+        if (digits[lastIndex] < 9) {
+            digits[lastIndex] = digits[lastIndex] + 1
         } else {
             bool = true
-            for (i in digits.indices) {
+            for (i in lastIndex downTo 0) {
                 if (!bool) break
                 if (digits[i] == 9) {
                     digits[i] = 0
@@ -17,14 +17,12 @@ fun main() {
             }
         }
 
-        if (!bool) {
-            digits.reverse()
-            return digits
+        if (!bool) return digits
+        val result = IntArray(lastIndex + 2)
+        result[0] = 1
+        for (i in 0..lastIndex) {
+            result[i + 1] = digits[i]
         }
-
-        val result = digits.copyOf(digits.size + 1)
-        result[result.lastIndex] = 1
-        result.reverse()
         return result
     }
 
