@@ -1,35 +1,37 @@
 fun main() {
     class ListNode(var `val`: Int) {
         var next: ListNode? = null
+        override fun toString(): String {
+            return `val`.toString() + next.toString()
+        }
     }
 
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
-        var tmp0 = l1
-        var tmp1 = l2
-        var pre = ListNode(0)
-        var carry = 0
-        while (tmp0 != null || tmp1 != null) {
-            val x = tmp0?.`val` ?: 0
-            val y = tmp1?.`val` ?: 0
-            var sum = x + y + carry
-            carry = if (sum > 9) 1 else 0
-            sum %= 10
-            pre.next = ListNode(sum)
-            pre = pre.next!!
-            tmp0 = tmp0?.next
-            tmp1 = tmp1?.next
+        var tmp = 0
+        val firstNode = ListNode(0)
+        var resultNode = firstNode
+
+        var newL1 = l1
+        var newL2 = l2
+        while (true) {
+            var res = tmp
+            if (newL1 != null) res += newL1.`val`
+            if (newL2 != null) res += newL2.`val`
+            resultNode.next = ListNode(res % 10)
+            tmp = res / 10
+            resultNode = resultNode.next!!
+            if (tmp == 0 && newL1?.next == null && newL2?.next == null) return firstNode.next
+            else {
+                newL1 = newL1?.next
+                newL2 = newL2?.next
+            }
         }
-        if (carry == 1) {
-            pre.next = ListNode(carry)
-        }
-        return pre.next
     }
 
-    val t00 = ListNode(2)
-    t00.next = ListNode(4)
-    t00.next!!.next = ListNode(3)
-    val t01 = ListNode(5)
-    t01.next = ListNode(6)
-    t01.next!!.next = ListNode(4)
-    t01.next!!.next!!.next = ListNode(4)
+    val t00 = ListNode(9)
+    t00.next = ListNode(9)
+    t00.next!!.next = ListNode(9)
+    val t01 = ListNode(9)
+    t01.next = ListNode(9)
+    println(addTwoNumbers(t00, t01))
 }
