@@ -33,7 +33,7 @@ fun main() {
         return search()
     }
 
-    // Sunday 面向异常编程...
+    // Sunday 面向异常编程 + 非迭代... 搞笑的hhhhhh
     fun strStrTry(haystack: String, needle: String): Int {
         if (needle.isEmpty()) return 0
         if (haystack.isEmpty()) return -1
@@ -44,27 +44,27 @@ fun main() {
         val wordMap = IntArray(26) { -1 }
         for (i in 0 until nLen) wordMap[needle[i] - 'a'] = i // 寻找某字母最后出现的位置
 
-        fun search(): Int {
+        return try {
             if (cur + nLen > hLen) return -1
             var i = 0
             while (i < nLen) {
                 if (haystack[cur + i] != needle[i]) {
                     val tmpIndex = wordMap[haystack[cur + nLen] - 'a']
-                    return if (tmpIndex != -1) {
+                    if (tmpIndex != -1) {
                         cur += nLen - tmpIndex
-                        search()
+                        if (cur + nLen > hLen) return -1
+                        i = 0
+                        continue
                     } else {
                         cur += nLen + 1
-                        search()
+                        if (cur + nLen > hLen) return -1
+                        i = 0
+                        continue
                     }
                 }
                 i++
             }
-            return cur
-        }
-
-        return try {
-            search()
+            cur
         } catch (e: Exception) {
             return -1
         }
