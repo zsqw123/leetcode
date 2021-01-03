@@ -7,6 +7,7 @@ fun maxDepth(root: TreeNode?): Int {
 
 /**
  * 带深度的 dfs, 使用堆栈操作, 若左右节点均 null 则获取 max, 否则子节点深度 + 1, 继续循环
+ * 事实上此题也可以使用bfs, 使用队列 Queue 操作, 先左后右插入, 效果一致
  *
  * @param root TreeNode?
  * @return Int

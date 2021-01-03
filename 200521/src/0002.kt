@@ -1,11 +1,6 @@
-fun main() {
-    class ListNode(var `val`: Int) {
-        var next: ListNode? = null
-        override fun toString(): String {
-            return `val`.toString() + next.toString()
-        }
-    }
+import utils.ListNode
 
+fun main() {
     fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
         var tmp = 0
         val firstNode = ListNode(0)

@@ -1,12 +1,6 @@
+import utils.ListNode
+
 fun main() {
-    class ListNode(var `val`: Int) {
-        var next: ListNode? = null
-
-        override fun toString(): String {
-            return `val`.toString() + next.toString()
-        }
-    }
-
     fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
         if (head == null) return null
         val zero = ListNode(0)

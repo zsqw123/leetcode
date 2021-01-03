@@ -25,4 +25,24 @@ fun main() {
         }
         return result
     }
+
+    // BFS use Queue
+    fun levelOrderBFS(root: TreeNode?): List<List<Int>> {
+        if (root == null) return emptyList()
+        val result = ArrayList<ArrayList<Int>>()
+
+        class IndexedNode(var node: TreeNode, var depth: Int)
+
+        val queue: Queue<IndexedNode> = LinkedList<IndexedNode>()
+        queue.add(IndexedNode(root, 1))
+        while (queue.isNotEmpty()) {
+            queue.poll().apply {
+                if (depth > result.size) result.add(arrayListOf(node.`val`))
+                else result[depth - 1].add(node.`val`)
+                node.left?.let { queue.add(IndexedNode(it, depth + 1)) }
+                node.right?.let { queue.add(IndexedNode(it, depth + 1)) }
+            }
+        }
+        return result
+    }
 }

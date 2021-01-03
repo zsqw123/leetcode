@@ -1,12 +1,6 @@
+import utils.ListNode
+
 fun main() {
-    class ListNode(var `val`: Int) {
-        var next: ListNode? = null
-
-        override fun toString(): String {
-            return `val`.toString() + next.toString()
-        }
-    }
-
     fun detectCycle(head: ListNode?): ListNode? {
         if (head == null) return null
         val set = hashSetOf<ListNode>()
