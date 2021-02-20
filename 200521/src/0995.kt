@@ -36,8 +36,24 @@ fun main() {
         return count
     }
 
-    val array = intArrayOf(0,0,0,1,0,1,1,0)
+    fun minKBitFlips2(A: IntArray, K: Int): Int {
+        var count = 0
+        val len = A.size
+        val hint = IntArray(len + 1)
+        var flip = 0
+        for (i in 0 until len) {
+            flip = flip xor hint[i]
+            if (A[i] xor flip == 1) continue
+            if (i + K >= len + 1) return -1
+            count++
+            flip = flip xor 1
+            hint[i + K] = hint[i + K] xor 1
+        }
+        return count
+    }
+
+    val array = intArrayOf(0, 0, 0, 1, 0, 1, 1, 0)
     val start = System.currentTimeMillis()
-    println(minKBitFlips(array, 3))
+    println(minKBitFlips2(array, 3))
     println(System.currentTimeMillis() - start)
 }
