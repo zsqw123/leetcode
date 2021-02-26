@@ -21,7 +21,7 @@ fun main() {
             while (last != 0) {
                 val key = bin0 or last
                 if (map.containsKey(key)) count += map[key]!!
-                last = (last - 1) and bin1 // 逐次减 1, 并屏蔽无关位
+                last = (last - 1) and bin1 // 逐次减 1, 并屏蔽无关位, 即可遍历 bin1 的全部情况
             }
             if (map.containsKey(bin0)) count += map[bin0]!!
             res.add(count)
