@@ -1,5 +1,5 @@
 fun main() {
     fun isMonotonic(A: IntArray): Boolean {
-        return A.contentEquals(A.sortedArray()) || A.contentEquals(A.sortedArrayDescending())
+        return if (A.first() > A.last()) A.contentEquals(A.sortedArrayDescending()) else A.contentEquals(A.sortedArray())
     }
 }
