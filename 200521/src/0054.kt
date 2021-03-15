@@ -17,7 +17,7 @@ fun main() {
                     --curXMax
                 }
                 2 -> {
-                    for (i in curXMax-- downTo curXMin) res.add(matrix[curYMax][i])
+                    for (i in curXMax downTo curXMin) res.add(matrix[curYMax][i])
                     --curYMax
                 }
                 3 -> {
