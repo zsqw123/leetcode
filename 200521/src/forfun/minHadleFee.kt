@@ -21,5 +21,5 @@ fun main() {
         if (maxMoney - maxMoney.toInt() == 0.0) maxMoney -= 10 // 如若刚好是 1.05 倍, 那么 - 10.
         return maxMoney.toInt().floor() / 1000.0 // 向下取整输出
     }
-    println(minHadleFee(16, 0.0015))
+    println(minHadleFee(118, 0.0025))
 }
