@@ -1,3 +1,5 @@
+package m001t099
+
 fun main() {
     fun removeElement(nums: IntArray, `val`: Int): Int {
         if (nums.isEmpty()) return 0

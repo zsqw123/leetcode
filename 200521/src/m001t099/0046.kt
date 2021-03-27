@@ -1,3 +1,5 @@
+package m001t099
+
 fun main() {
     val result = ArrayList<List<Int>>()
     fun permute(remain: ArrayList<Int>, single: ArrayList<Int>) {

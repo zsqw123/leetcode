@@ -1,3 +1,5 @@
+package m001t099
+
 fun main() {
     fun convert(s: String, numRows: Int): String {
         if (numRows == 1 || s.length == 1) return s

@@ -1,3 +1,5 @@
+package m001t099
+
 fun main() {
     fun lengthOfLongestSubstring(s: String): Int {
         var res = 0

@@ -10,5 +10,4 @@ fun main() {
         }
         return if (n < 0) 1 / res else res
     }
-
 }
