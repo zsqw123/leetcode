@@ -27,6 +27,6 @@ fun main() {
         return res.reversed().toString()
     }
 
-    // 36+10 72+10 = 128 =3k
+    // 36+10 72+10 = 128 = 3k
     println("1a".xPlus("2a"))
 }
