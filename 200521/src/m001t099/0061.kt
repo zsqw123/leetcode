@@ -13,7 +13,7 @@ fun main() {
         }
 
         temp.next = head
-        val newK=k %len
+        val newK = k % len
         var index = len - newK //找到要断开循环链表的节点纪录链表新的头结点
         while (index-- > 0) {
             temp = temp!!.next
