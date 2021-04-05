@@ -1,3 +1,5 @@
+package m200t499
+
 import utils.ListNode
 
 fun main() {
@@ -10,5 +12,22 @@ fun main() {
 
     fun reverseList(head: ListNode?): ListNode? {
         return reverse(null, head)
+    }
+
+    fun reverseList2(head: ListNode?): ListNode? {
+        var pre = head ?: return null
+        var now = pre.next
+        head.next = null
+        while (now != null) {
+            val tmp = now.next
+            now.next = pre
+            if (tmp != null) {
+                pre = now
+                now = tmp
+            } else {
+                return now
+            }
+        }
+        return pre
     }
 }
