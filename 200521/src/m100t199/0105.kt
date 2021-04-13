@@ -1,9 +1,8 @@
-fun main() {
-    class TreeNode(var `val`: Int) {
-        var left: TreeNode? = null
-        var right: TreeNode? = null
-    }
+package m100t199
 
+import utils.TreeNode
+
+fun main() {
     val list = mutableListOf<Int?>()
     fun TreeNode.printTree() {
         list += `val`
@@ -16,7 +15,7 @@ fun main() {
     }
 
     fun helper(
-            preorder: IntArray, inorder: IntArray, preIndex: Int = 0, inS: Int = 0, inE: Int = preorder.size - 1
+        preorder: IntArray, inorder: IntArray, preIndex: Int = 0, inS: Int = 0, inE: Int = preorder.size - 1
     ): TreeNode? {
         if (inS > inE) return null
         val rootNum = preorder[preIndex]
