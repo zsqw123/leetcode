@@ -22,10 +22,19 @@ class TreeNode(@JvmField var `val`: Int) {
         if (left != null || right != null) {
             sb.append(":")
             sb.append("\n")
-            left?.let { sb.append(it.stringlize(tabCount + 1)) }
+            if (left == null) {
+                repeat(tabCount + 1) { sb.append("\t") }
+                sb.append("null")
+            } else {
+                sb.append(left!!.stringlize(tabCount + 1))
+            }
             sb.append("\n")
-            right?.let { sb.append(it.stringlize(tabCount + 1)) }
-            sb.append("\n")
+            if (right == null) {
+                repeat(tabCount + 1) { sb.append("\t") }
+                sb.append("null")
+            } else {
+                sb.append(right!!.stringlize(tabCount + 1))
+            }
         }
         return sb.toString()
     }
@@ -34,7 +43,7 @@ class TreeNode(@JvmField var `val`: Int) {
 
     companion object {
         @JvmStatic
-        fun buildTree(array: Array<Int?>): TreeNode? {
+        fun buildTree(array: Array<out Int?>): TreeNode? {
             if (array.isEmpty() || array[0] == null) return null
             val last = array.size - 1
             var item = array[0]
@@ -62,7 +71,12 @@ class TreeNode(@JvmField var `val`: Int) {
     }
 }
 
+fun Array<out Int?>.toTree(): TreeNode? = TreeNode.buildTree(this)
+
 fun main() {
-    val tree = TreeNode.buildTree(arrayOf(1, 2, 3, 4, 5, 6, 7))
-    println(tree)
+    arrayOf(
+        1, 2, 3,
+        null, 4, 5, 6,
+        null, null, 7, 8, null, 9, 10, 11, null
+    ).toTree().prl()
 }
