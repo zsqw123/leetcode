@@ -1,6 +1,8 @@
 package utils
 
 class ListNode(var `val`: Int) {
+    constructor() : this(0)
+
     @JvmField
     var next: ListNode? = null
 
