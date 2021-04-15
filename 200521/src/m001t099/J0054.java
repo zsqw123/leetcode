@@ -1,7 +1,9 @@
+package m001t099;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class S0054 {
+public class J0054 {
     public List<Integer> spiralOrder(int[][] matrix) {
         ArrayList<Integer> res = new ArrayList<>();
         int curXMin = 0;

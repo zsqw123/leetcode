@@ -1,7 +1,9 @@
+package m001t099;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class S0059 {
+public class J0059 {
     public int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
         int curXMin = 0;

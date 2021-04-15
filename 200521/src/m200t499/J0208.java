@@ -2,7 +2,7 @@ package m200t499;
 
 import java.util.HashMap;
 
-public class J208 {
+public class J0208 {
     /**
      * 查找复杂度 O(1), 插入复杂度最坏为 O(len), 但是慢于官方题解<br/>
      * 空间复杂度 O(n^2) (大概?

@@ -1,4 +1,6 @@
-public class S0150 {
+package m100t199;
+
+public class J0150 {
     class Node {
         int v;
         Node next;

@@ -74,9 +74,10 @@ class TreeNode(@JvmField var `val`: Int) {
 fun Array<out Int?>.toTree(): TreeNode? = TreeNode.buildTree(this)
 
 fun main() {
-    arrayOf(
-        1, 2, 3,
-        null, 4, 5, 6,
-        null, null, 7, 8, null, 9, 10, 11, null
-    ).toTree().prl()
+//    arrayOf(
+//        1, 2, 3,
+//        null, 4, 5, 6,
+//        null, null, 7, 8, null, 9, 10, 11, null
+//    ).toTree().prl()
+    
 }
