@@ -19,7 +19,6 @@ public class J0043 {
      *  -----------------------
      *      67   7   3   2   2
      */
-    // 相当正常的做法
     class S0 {
         public String multiply(String num1, String num2) {
             if(num1.charAt(0)=='0'||num2.charAt(0)=='0') return "0";
