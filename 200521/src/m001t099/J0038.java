@@ -1,6 +1,7 @@
 package m001t099;
 
 public class J0038 {
+    // 可以非迭代 没必要
     public String countAndSay(int n) {
         if(n==1) return "1";
         String input=countAndSay(n-1);
@@ -10,13 +11,13 @@ public class J0038 {
         int count=1;
         for(int i=1;i<arr.length;i++){
             if(arr[i]!=arr[i-1]){
-                sb.append(String.valueOf(count));
-                sb.append(String.valueOf(arr[i-1]));
+                sb.append(count);
+                sb.append(arr[i - 1]);
                 count=1;
             }else count++;
         }
-        sb.append(String.valueOf(count));
-        sb.append(String.valueOf(arr[arr.length-1]));
+        sb.append(count);
+        sb.append(arr[arr.length - 1]);
         return sb.toString();
     }
 }
