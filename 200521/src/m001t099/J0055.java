@@ -8,10 +8,6 @@ public class J0055 {
             rightmost=Math.max(rightmost, i+nums[i]);
             if(rightmost>=n-1)return true;
         }
-        switch (n){
-            case 1: n=1;return false;
-            case 2: n=2;
-        }
         return false;
     }
 }
