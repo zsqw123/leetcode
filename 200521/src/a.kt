@@ -6,6 +6,5 @@ import utils.prl
 
 fun main() {
     val regex=Regex("""\{.*?}""")
-
     regex.find("dawwaw{awa}adwaaw")?.value.prl()
 }
