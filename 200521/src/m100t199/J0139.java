@@ -33,6 +33,7 @@ public class J0139 {
     class S2 {
         String s;
         List<String> wordDict;
+        /** mem 保存遍历结果, 存0表示没遍历过, 1代表遍历过但失败, 2是遍历过且成功 */
         int[] mem;
         public boolean helper(int start){
             if(mem[start]==2) return true;
@@ -45,10 +46,10 @@ public class J0139 {
                 for(int j=0;j<word.length();j++)
                     if(s.charAt(j+start)!=word.charAt(j)){
                         mem[start]=1;
-                        continue outter;
+                        continue outter; // 一旦发现单词中哪个字母不匹配, 跳过这个单词
                     }
 
-                mem[start]=2;
+                mem[start]=2; // 单词匹配, 进行 dfs
                 if(word.length()+start==s.length()||helper(start+word.length())) return true;
             }
             mem[start]=1;
