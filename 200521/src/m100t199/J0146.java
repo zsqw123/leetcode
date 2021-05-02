@@ -3,7 +3,7 @@ package m100t199;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-class J0416{
+class J0146 {
     class LRUCache {
         class LRU extends LinkedHashMap<Integer,Integer>{
             int max;

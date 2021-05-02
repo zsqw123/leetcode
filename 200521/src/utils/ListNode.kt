@@ -1,6 +1,6 @@
 package utils
 
-class ListNode(var `val`: Int) {
+class ListNode(@JvmField var `val`: Int = 0) {
     constructor() : this(0)
 
     @JvmField
