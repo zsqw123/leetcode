@@ -5,12 +5,17 @@ import java.io.File
  * This file just create for test.
  */
 
-operator fun String.minus(string: String): String = plus(string)
+inline operator fun <reified T> String.minus(value: T): String {
+    val v = when (value) {
+        is Number -> value.toString()
+        else -> "\"$value\""
+    }
+    return "\"$this\" : $v"
+}
 
 fun main() {
-    println("awaccawacc"-"cc")
-    println("awaccawacc"-"cc"-"cc")
-
+    println("awa" - 1)
+    println("awa" - "hhhhc")
     val root = File("C:/a")
     val a = File(root, "awa/b/")
     val b = File(root, "/awa/b/")
