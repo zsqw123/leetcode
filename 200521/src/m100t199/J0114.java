@@ -2,7 +2,7 @@ package m100t199;
 
 import utils.TreeNode;
 
-public class J114 {
+public class J0114 {
     /**
      * 常规做法 模拟前序遍历
      */
