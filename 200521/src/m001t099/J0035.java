@@ -2,15 +2,13 @@ package m001t099;
 
 public class J0035 {
     public int searchInsert(int[] nums, int target) {
-        int l=0;
-        int r=nums.length;
-        int mid;
-        while(l<r){
-            mid=l+(r-l)/2;
-            if(nums[mid]>target) r=mid;
-            else if(nums[mid]<target) l=mid+1;
-            else return mid;
+        int l=-1,r=nums.length,mid;
+        while(l+1!=r){
+            mid=l+((r-l)>>1);
+            if(nums[mid]==target) return mid;
+            else if(nums[mid]<target) l=mid;
+            else r=mid;
         }
-        return l;
+        return r;
     }
 }
