@@ -2,7 +2,7 @@ package m500t999;
 
 import java.util.*;
 
-public class J690 {
+public class J0690 {
 
     class Employee {
         public int id;
