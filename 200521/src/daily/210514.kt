@@ -1,16 +1,14 @@
 package daily
 
 fun dfs(str: CharArray, start: Int) {
-    if(start==str.size-1){
-        println(String(str))
-    }
-    else for (j in start until str.size) {
-        var tmp = str[j]
-        str[j] = str[start]
+    if (start == str.size - 1) println(String(str))
+    else for (i in start until str.size) {
+        var tmp = str[i]
+        str[i] = str[start]
         str[start] = tmp
         dfs(str, start + 1)
-        tmp = str[j]
-        str[j] = str[start]
+        tmp = str[i]
+        str[i] = str[start]
         str[start] = tmp
     }
 }
