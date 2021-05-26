@@ -2,7 +2,7 @@ package daily;
 
 import utils.ListNode;
 
-public class J210519 {
+public class J210519链表求和 {
     // 链表求和 https://leetcode-cn.com/problems/sum-lists-lcci/submissions/
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode n1=l1,n2=l2;
