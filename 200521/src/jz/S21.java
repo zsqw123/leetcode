@@ -24,4 +24,30 @@ public class S21 {
         }
         return nums;
     }
+
+    /**
+     * 210729
+     */
+    public int[] exchange2(int[] nums) {
+        int len=nums.length;
+        if(len<2) return nums;
+
+        int i=0,j=len-1;
+        while(i<j){
+            if((nums[i] & 1)==1){
+                i++;
+                continue;
+            }
+            while(j>i && (nums[j] & 1)==0){
+                j--;
+            }
+            if(j>i){
+                int tmp=nums[j];
+                nums[j]=nums[i];
+                nums[i]=tmp;
+            }
+        }
+
+        return nums;
+    }
 }
