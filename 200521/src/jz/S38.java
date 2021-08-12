@@ -13,7 +13,7 @@ public class S38 {
             return;
         }
         for(int i=0;i<chars.length;i++){
-            // 和前一个元素相等而且前一个元素可用状态(即未被参观过)
+            // 树层上去重和树枝上去重都可以(!visited[i-1] true/false 都可以)
             if(i>0 && chars[i]==chars[i-1] && !visited[i-1]) continue;
             if(!visited[i]){
                 visited[i]=true;
