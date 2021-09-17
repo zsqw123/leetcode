@@ -1,14 +1,24 @@
-import utils.prl
-import java.io.File
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
 /**
  * This file just create for test.
  */
-fun main() {
-    "🤩awa啊".forEach { println("$it : ${it.toInt()}") }
-//    "啊".length.prl()
-//    "z".length.prl()
-//    "🤩".encodeToByteArray().size.prl()
-//    "啊".encodeToByteArray().size.prl()
-//    "z".encodeToByteArray().size.prl()
+fun awa(method: (Int) -> Unit) {
+    method(1)
+}
+
+suspend fun main() {
+    val suspendCoroutine = suspendCoroutine<Int> { con ->
+        awa {
+            con.resume(it)
+        }
+    }
+    println(suspendCoroutine)
+}
+
+object AWA {
+    fun hi(): (Int) -> Unit {
+        return {}
+    }
 }
