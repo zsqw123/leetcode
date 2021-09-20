@@ -1,3 +1,5 @@
+package m100t199
+
 fun main() {
     fun minimumTotal(triangle: List<List<Int>>): Int {
         val iSize = triangle.size
@@ -14,7 +16,7 @@ fun main() {
             tri[i][i] = tri[i - 1][i - 1] + tri[i][i]
             for (j in 1 until i) tri[i][j] = tri[i - 1][j - 1].coerceAtMost(tri[i - 1][j]) + tri[i][j]
         }
-        return tri[iSize - 1].min()!!
+        return tri[iSize - 1].minOrNull()!!
     }
 
     val input = listOf(
