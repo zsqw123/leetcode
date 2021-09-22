@@ -1,5 +1,3 @@
-import kotlin.reflect.KClass
-
 /**
  * This file just create for test.
  */
