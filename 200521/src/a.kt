@@ -1,18 +1,12 @@
 /**
  * This file just create for test.
  */
-val map = hashMapOf<String, Any>()
-inline fun <reified T> getTReifiedNull(): T? {
-    return map[""] as? T
-}
 
-fun <T> getTNull(): T? {
-    return map[""] as? T
+class User(val map: Map<String, Any?>) {
+    val name: String by map
 }
 
 fun main() {
-    val r = getTReifiedNull<Int>()
-    println(r)
-    val a = getTNull<Int>()
-    println(a)
+    val user = User(mapOf("name" to "zzz"))
+    println(user.name)
 }
