@@ -25,8 +25,8 @@ public class S32_3 {
             }
             if(tmp.isEmpty()) break;
             List<Integer> r=new ArrayList<>();
-            for(TreeNode t:tmp) r.add(t.val);
-            if(!leftStart) Collections.reverse(r);
+            Iterator<TreeNode> it=leftStart?tmp.iterator():tmp.descendingIterator();
+            while(it.hasNext())r.add(it.next().val);
             res.add(r);
             deque=tmp;
             leftStart=!leftStart;
